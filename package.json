@@ -2,8 +2,13 @@
   "name": "react-snackbar-messages",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/index.js"
+  ],
   "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "NODE_ENV=production babel src -d dist --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,9 +21,22 @@
   "bugs": {
     "url": "https://github.com/mohamedsamara/react-snackbar-messages/issues"
   },
-  "homepage": "https://github.com/mohamedsamara/react-snackbar-messages#readme"
+  "homepage": "https://github.com/mohamedsamara/react-snackbar-messages#readme",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
-
-
-
-
