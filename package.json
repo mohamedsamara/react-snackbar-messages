@@ -1,0 +1,24 @@
+{
+  "name": "react-snackbar-messages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedsamara/react-snackbar-messages.git"
+  },
+  "keywords": [],
+  "author": "Mohamed Samara (https://github.com/mohamedsamara)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mohamedsamara/react-snackbar-messages/issues"
+  },
+  "homepage": "https://github.com/mohamedsamara/react-snackbar-messages#readme"
+}
+
+
+
+
