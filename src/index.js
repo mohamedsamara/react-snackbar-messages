@@ -1,7 +1,4 @@
-import React from "react";
+import SnackbarProvider from "./provider";
+import useSnackbar from "./useSnackbar";
 
-const Hello = () => {
-  return <div>Hello Component</div>;
-};
-
-export default Hello;
+export { SnackbarProvider, useSnackbar };
