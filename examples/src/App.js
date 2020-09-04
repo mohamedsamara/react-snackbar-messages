@@ -12,7 +12,7 @@ const App = () => {
         onClick={() =>
           snackbar.add("Success Snackbar", {
             type: "success",
-            autoDismiss: false,
+            autoDismiss: true,
           })
         }
       >
@@ -22,7 +22,7 @@ const App = () => {
         onClick={() =>
           snackbar.add("Info Snackbar", {
             type: "info",
-            autoDismiss: false,
+            autoDismiss: true,
           })
         }
       >
@@ -32,21 +32,11 @@ const App = () => {
         onClick={() =>
           snackbar.add("Warning Snackbar", {
             type: "warning",
-            autoDismiss: false,
+            autoDismiss: true,
           })
         }
       >
         Add Warning Snackbar
-      </button>
-      <button
-        onClick={() =>
-          snackbar.add("Default Snackbar", {
-            type: "default",
-            autoDismiss: false,
-          })
-        }
-      >
-        Add Default Snackbar
       </button>
       <button
         onClick={() =>
@@ -57,6 +47,16 @@ const App = () => {
         }
       >
         Add Error Snackbar
+      </button>
+      <button
+        onClick={() =>
+          snackbar.add("Default Snackbar", {
+            type: "default",
+            autoDismiss: true,
+          })
+        }
+      >
+        Add Default Snackbar
       </button>
     </div>
   );

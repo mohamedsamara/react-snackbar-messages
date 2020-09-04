@@ -11,7 +11,10 @@ const SnackbarProvider = (props) => {
   const [snackbars, setSnackbars] = useState([]);
   const { children, placement = "bottom-center" } = props;
 
-  const add = (content, { type = "default", autoDismiss, delay }) => {
+  const add = (
+    content,
+    { type = "default", autoDismiss = true, delay = 5000 }
+  ) => {
     const id = snackbarCounter++;
     const snackbar = { id, content, type, autoDismiss, delay };
 

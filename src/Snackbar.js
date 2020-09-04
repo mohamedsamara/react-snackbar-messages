@@ -43,7 +43,7 @@ const Snackbar = ({ children, type, autoDismiss, delay, remove }) => {
     let id;
 
     if (autoDismiss) {
-      const duration = delay || 5000;
+      const duration = delay;
       id = setTimeout(() => removeRef.current(), duration);
     }
 
@@ -112,6 +112,8 @@ const Snackbar = ({ children, type, autoDismiss, delay, remove }) => {
             transition: "transform ease 0.3s",
             ":focus": {
               outline: "none",
+            },
+            ":hover": {
               transform: "scale(0.9)",
               transition: "transform ease 0.3s",
             },
