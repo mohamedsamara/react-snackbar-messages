@@ -7,10 +7,10 @@ const App = () => {
 
   return (
     <div>
-      <h4>Hello</h4>
+      <h4>Examples</h4>
       <button
         onClick={() =>
-          snackbar.add("Hello Success Snackbar", {
+          snackbar.add("Success Snackbar", {
             type: "success",
             autoDismiss: false,
           })
@@ -20,7 +20,7 @@ const App = () => {
       </button>
       <button
         onClick={() =>
-          snackbar.add("Hello Info Snackbar", {
+          snackbar.add("Info Snackbar", {
             type: "info",
             autoDismiss: false,
           })
@@ -30,7 +30,7 @@ const App = () => {
       </button>
       <button
         onClick={() =>
-          snackbar.add("Hello Warning Snackbar", {
+          snackbar.add("Warning Snackbar", {
             type: "warning",
             autoDismiss: false,
           })
@@ -40,13 +40,23 @@ const App = () => {
       </button>
       <button
         onClick={() =>
-          snackbar.add("Hello Default Snackbar", {
+          snackbar.add("Default Snackbar", {
             type: "default",
             autoDismiss: false,
           })
         }
       >
         Add Default Snackbar
+      </button>
+      <button
+        onClick={() =>
+          snackbar.add("Error Snackbar", {
+            type: "error",
+            autoDismiss: false,
+          })
+        }
+      >
+        Add Error Snackbar
       </button>
     </div>
   );

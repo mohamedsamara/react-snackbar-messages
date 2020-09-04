@@ -5,7 +5,7 @@ import { SnackbarProvider } from "../../src";
 import App from "./App";
 
 render(
-  <SnackbarProvider>
+  <SnackbarProvider placement="bottom-center">
     <App />
   </SnackbarProvider>,
   document.getElementById("root")

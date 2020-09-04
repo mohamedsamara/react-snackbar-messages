@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { createPortal } from "react-dom";
 
 import SnackbarContext from "./context";
@@ -8,8 +8,8 @@ import Snackbar from "./Snackbar";
 let snackbarCounter = 0;
 
 const SnackbarProvider = (props) => {
-  const { children } = props;
   const [snackbars, setSnackbars] = useState([]);
+  const { children, placement = "bottom-center" } = props;
 
   const add = (content, { type = "default", autoDismiss, delay }) => {
     const id = snackbarCounter++;
@@ -27,18 +27,21 @@ const SnackbarProvider = (props) => {
       {children}
 
       {createPortal(
-        <SnackbarContainer>
-          {snackbars.map(({ id, content, type, autoDismiss, delay }) => (
-            <Snackbar
-              key={id}
-              type={type}
-              autoDismiss={autoDismiss}
-              delay={delay}
-              remove={() => remove(id)}
-            >
-              {content}
-            </Snackbar>
-          ))}
+        <SnackbarContainer placement={placement}>
+          {snackbars.map(
+            ({ id, content, type, placement, autoDismiss, delay }) => (
+              <Snackbar
+                key={id}
+                type={type}
+                placement={placement}
+                autoDismiss={autoDismiss}
+                delay={delay}
+                remove={() => remove(id)}
+              >
+                {content}
+              </Snackbar>
+            )
+          )}
         </SnackbarContainer>,
 
         document.body
