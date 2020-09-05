@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { createPortal } from "react-dom";
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 
-import SnackbarContext from "./context";
-import SnackbarContainer from "./SnackbarContainer";
-import Snackbar from "./Snackbar";
+import SnackbarContext from './context';
+import SnackbarContainer from './SnackbarContainer';
+import Snackbar from './Snackbar';
 
 let snackbarCounter = 0;
 
-const SnackbarProvider = (props) => {
+const SnackbarProvider = props => {
   const [snackbars, setSnackbars] = useState([]);
-  const { children, placement = "bottom-center" } = props;
+  const { children, placement = 'bottom-center' } = props;
 
   const add = (
     content,
-    { appearance = "default", autoDismiss = true, delay = 5000 }
+    { appearance = 'default', autoDismiss = true, delay = 5000 }
   ) => {
     const id = snackbarCounter++;
     const snackbar = { id, content, appearance, autoDismiss, delay };
@@ -21,8 +21,8 @@ const SnackbarProvider = (props) => {
     setSnackbars([...snackbars, snackbar]);
   };
 
-  const remove = (id) => {
-    setSnackbars(snackbars.filter((s) => s.id !== id));
+  const remove = id => {
+    setSnackbars(snackbars.filter(s => s.id !== id));
   };
 
   return (
