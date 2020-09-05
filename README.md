@@ -32,11 +32,11 @@ const ChildComponent = () => {
   }
 
   return <button onClick={showSnackbar}>Show Snackbar</button>
-};
+}
 
 const App = () => (
   <SnackbarProvider>
     <ChildComponent />
   </SnackbarProvider>
-);
+)
 ```
