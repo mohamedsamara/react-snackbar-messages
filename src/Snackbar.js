@@ -35,7 +35,8 @@ const appearances = {
 
 export const fadeAnimations = keyframes`from { opacity: 0 } to { opacity: 1}`;
 
-const Snackbar = ({ children, type, autoDismiss, delay, remove }) => {
+const Snackbar = (props) => {
+  const { children, appearance, autoDismiss, delay, remove } = props;
   const removeRef = useRef();
   removeRef.current = remove;
 
@@ -58,14 +59,14 @@ const Snackbar = ({ children, type, autoDismiss, delay, remove }) => {
         padding: "12px 10px",
       }}
     >
-      {appearances[type].icon}
+      {appearances[appearance].icon}
     </div>
   );
 
   const positionStyles = {
     animation: `${fadeAnimations} ease 0.5s`,
-    backgroundColor: appearances[type].bg,
-    color: appearances[type].text,
+    backgroundColor: appearances[appearance].bg,
+    color: appearances[appearance].text,
     margin: 10,
     borderRadius: 5,
     boxShadow:
@@ -73,25 +74,29 @@ const Snackbar = ({ children, type, autoDismiss, delay, remove }) => {
   };
 
   return (
-    <div className={`snackbar-wrapper ${type}-snackbar`} css={positionStyles}>
+    <div
+      className={`snackbar-wrapper ${appearance}-snackbar`}
+      css={positionStyles}
+    >
       <div
         className="snackbar-block"
         css={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          minWidth: 400,
+          width: 320,
           maxWidth: 500,
         }}
       >
-        {type !== "default" && getIcon()}
+        {appearance !== "default" && getIcon()}
         <div
           className="snackbar-content"
           css={{
             flex: 1,
             fontSize: 14,
             fontFamily: "sans-serif",
-            padding: type === "default" ? "12px 12px 12px 18px" : "12px 6px",
+            padding:
+              appearance === "default" ? "12px 12px 12px 18px" : "12px 6px",
             lineHeight: 1.4,
             wordBreak: "break-word",
           }}

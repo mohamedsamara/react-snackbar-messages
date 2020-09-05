@@ -13,10 +13,10 @@ const SnackbarProvider = (props) => {
 
   const add = (
     content,
-    { type = "default", autoDismiss = true, delay = 5000 }
+    { appearance = "default", autoDismiss = true, delay = 5000 }
   ) => {
     const id = snackbarCounter++;
-    const snackbar = { id, content, type, autoDismiss, delay };
+    const snackbar = { id, content, appearance, autoDismiss, delay };
 
     setSnackbars([...snackbars, snackbar]);
   };
@@ -31,20 +31,17 @@ const SnackbarProvider = (props) => {
 
       {createPortal(
         <SnackbarContainer placement={placement}>
-          {snackbars.map(
-            ({ id, content, type, placement, autoDismiss, delay }) => (
-              <Snackbar
-                key={id}
-                type={type}
-                placement={placement}
-                autoDismiss={autoDismiss}
-                delay={delay}
-                remove={() => remove(id)}
-              >
-                {content}
-              </Snackbar>
-            )
-          )}
+          {snackbars.map(({ id, content, appearance, autoDismiss, delay }) => (
+            <Snackbar
+              key={id}
+              appearance={appearance}
+              autoDismiss={autoDismiss}
+              delay={delay}
+              remove={() => remove(id)}
+            >
+              {content}
+            </Snackbar>
+          ))}
         </SnackbarContainer>,
 
         document.body

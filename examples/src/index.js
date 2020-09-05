@@ -1,12 +1,22 @@
 import React from "react";
 import { render } from "react-dom";
 
-import { SnackbarProvider } from "../../src";
+import { Global, css } from "@emotion/core";
+
 import App from "./App";
 
 render(
-  <SnackbarProvider placement="bottom-center">
+  <>
+    <Global
+      styles={{
+        body: {
+          margin: 0,
+          padding: 0,
+          lineHeight: 1.4,
+        },
+      }}
+    />
     <App />
-  </SnackbarProvider>,
+  </>,
   document.getElementById("root")
 );

@@ -1,63 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { useSnackbar } from "../../src";
+import { SnackbarProvider } from "../../src";
+
+import Demo from "./components/Demo";
+
+const placements = [
+  { label: "Top Left", value: "top-left" },
+  { label: "Top Center", value: "top-center" },
+  { label: "Top Right", value: "top-right" },
+  { label: "Bottom Left", value: "bottom-left" },
+  { label: "Bottom Center", value: "bottom-center" },
+  { label: "Bottom Right", value: "bottom-right" },
+];
 
 const App = () => {
-  const snackbar = useSnackbar();
+  const [placement, setPlacement] = useState(placements[4].value);
+
+  const placementChange = (value) => {
+    setPlacement(value);
+  };
 
   return (
-    <div>
-      <h4>Examples</h4>
-      <button
-        onClick={() =>
-          snackbar.add("Success Snackbar", {
-            type: "success",
-            autoDismiss: true,
-          })
-        }
-      >
-        Add Success Snackbar
-      </button>
-      <button
-        onClick={() =>
-          snackbar.add("Info Snackbar", {
-            type: "info",
-            autoDismiss: true,
-          })
-        }
-      >
-        Add Info Snackbar
-      </button>
-      <button
-        onClick={() =>
-          snackbar.add("Warning Snackbar", {
-            type: "warning",
-            autoDismiss: true,
-          })
-        }
-      >
-        Add Warning Snackbar
-      </button>
-      <button
-        onClick={() =>
-          snackbar.add("Error Snackbar", {
-            type: "error",
-            autoDismiss: false,
-          })
-        }
-      >
-        Add Error Snackbar
-      </button>
-      <button
-        onClick={() =>
-          snackbar.add("Default Snackbar", {
-            type: "default",
-            autoDismiss: true,
-          })
-        }
-      >
-        Add Default Snackbar
-      </button>
+    <div
+      className="app"
+      css={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#f1f2f5",
+        padding: 25,
+      }}
+    >
+      <SnackbarProvider placement={placement}>
+        <Demo
+          placements={placements}
+          placement={placement}
+          placementChange={placementChange}
+        />
+      </SnackbarProvider>
     </div>
   );
 };
