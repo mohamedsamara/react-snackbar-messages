@@ -1,7 +1,7 @@
 {
   "name": "react-snackbar-messages",
   "version": "1.0.0",
-  "description": "",
+  "description": " A Simple React snackbar messages",
   "main": "dist/index.js",
   "files": [
     "dist/index.js"
@@ -9,19 +9,30 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "NODE_ENV=production babel src -d dist --copy-files",
+    "build:examples": "webpack --mode production",
+    "deploy": "gh-pages -d examples/dist",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mohamedsamara/react-snackbar-messages.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "snackbar",
+    "snackbars",
+    "messages",
+    "notification",
+    "toast",
+    "alert"
+  ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mohamedsamara/react-snackbar-messages/issues"
   },
-  "homepage": "https://github.com/mohamedsamara/react-snackbar-messages#readme",
+  "homepage": "https://mohamedsamara.github.io/react-snackbar-messages",
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
@@ -33,6 +44,7 @@
     "@babel/preset-react": "^7.10.4",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "babel-loader": "^8.1.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
