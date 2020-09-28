@@ -1,11 +1,8 @@
 {
   "name": "react-snackbar-messages",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": " A Simple React snackbar messages",
   "main": "dist/index.js",
-  "files": [
-    "dist/index.js"
-  ],
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "NODE_ENV=production babel src -d dist --copy-files",

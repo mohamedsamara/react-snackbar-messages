@@ -26,7 +26,7 @@ const ChildComponent = () => {
 
   const showSnackbar = () => {
     snackbar.add('Hello Snackbar!', {
-      appearance: 'sucess',
+      appearance: 'success',
       autoDismiss: true
     })
   }
